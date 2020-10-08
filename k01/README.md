@@ -1,5 +1,5 @@
 # 課題1 レポート
-学籍番号　氏名
+35319031　橋口裕太
 
 
 ## 課題
@@ -68,6 +68,21 @@ typedef struct {
 ## 出力結果
 
 ```
+===== linear search =====
+City ID?42207
+42207, 長崎県, 平戸市, 31920, 14874, 17046
+
+===== binary search =====
+City ID?42207
+42207, 長崎県, 平戸市, 31920, 14874, 17046
+
+===== linear search =====
+City ID?37098
+city was not found
+
+===== binary search =====
+City ID?49087
+city was not found
 
 ```
 
