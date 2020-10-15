@@ -1,5 +1,5 @@
 # 課題1 レポート
-学籍番号　氏名
+35319031　橋口裕太
 
 
 ## 課題
@@ -61,13 +61,37 @@ typedef struct {
 
 
 ## ソースコードの説明
+l.68,69:indexを表す変数posと結果の変数resultを宣言
+l.71~76:リニアサーチなので、posが0から配列のサイズ分まで、keyと配列のidが一致するものを探索し、もし一致するものがあればresultにそのindexであるposを代入する
+l.77:resultの値を返す
 
+l.84,85:indexを表す変数posと結果の変数resultを宣言
+l.87~97:バイナリサーチなので、配列の右端のindexから左端のindexを引いたものが0以上であるとき（リストに要素が存在する場合）、posをリストの中央して、keyとindexがpos時の配列のidが一致したら、その時のposをresultに代入し、ループを抜ける
+もしkeyがpos時の配列のidより大きければ探索対象の範囲の左端のindexのleftをpos+1にする
+もしkeyがpos時の配列のidより小さければ探索対象の範囲の右端のindexのrightをpos-1にする
+これを繰り返し、keyとindexがpos時の配列のidが一致するものを探索
+l.98:resultの値を返す
 
 
 
 ## 出力結果
 
 ```
+===== linear search =====
+City ID?42207
+42207, 長崎県, 平戸市, 31920, 14874, 17046
+
+===== binary search =====
+City ID?42207
+42207, 長崎県, 平戸市, 31920, 14874, 17046
+
+===== linear search =====
+City ID?37098
+city was not found
+
+===== binary search =====
+City ID?49087
+city was not found
 
 ```
 
