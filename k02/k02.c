@@ -88,6 +88,16 @@ int DeleteNodeAt(Node** ppNode, int cn)
 {
     //  チャレンジ問題1
     //  ここを実装する
+    int pos=0;
+    while(pNode != NULL){
+        if(pos==cn){
+            PPrev->next = pNode->next;
+            free(pNode);
+
+            return SUCCESS;
+        }
+    }
+
 
 }
 #endif
@@ -97,8 +107,19 @@ int SearchCityByName(Node* pList, char* cityName, City* pCity)
 {
     //  チャレンジ問題2
     //  ここを実装する
-
+    int pos=0;
+    Node*top=pList;
+    while(top!=NULL){
+        if(strcmp(top->city.name,cityName)==0){
+            *pCity=top->city;
+            return pos;
+        }
+        top=top->pNext;
+        pos=pos+1;
+    }
+    return -1;
 }
+
 #endif
 
 int SearchCityByID(Node* pList, int ID, City* pCity)
