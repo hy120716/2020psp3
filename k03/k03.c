@@ -63,6 +63,7 @@ char* BMSearch(char text[], char key[])
         }
         index=index+table[(int)text[index]];
     }
+    return NULL;
 }
 
 int main(void)
