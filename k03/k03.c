@@ -37,6 +37,7 @@ char* BMSearch(char text[], char key[])
     //  ここを実装する
     int index;
     int key_index;
+    int before_index;
     int i;
 
     int text_len = strlen(text);
@@ -61,7 +62,11 @@ char* BMSearch(char text[], char key[])
                 break;
             }
         }
+        before_index=index;
         index=index+table[(int)text[index]];
+        if(index<=before_index){
+            index=before_index+1;
+        }
     }
     return NULL;
 }
