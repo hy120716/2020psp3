@@ -99,12 +99,42 @@ int AdjacencyMatrix[MAX_STATIONS][MAX_STATIONS] = {
 
 
 ## ソースコードの説明
+l.113~115:visitedを初期化。
+l.116:Stackを初期化。
+l.117:出発点(start)をPush。
+l.119~130:stackが空ではない場合、stackから1つ取り出し（pop)、行ったことがない（visited[index]==UNVISITED)ならば、行ったことにして（visited[index]=VISITED）、その場所から行けるところをstackに入れる。
+l.132~135:すべての駅に到達可能なことをチェックする。
+
+l.207~209:visitedを初期化。
+l.210:Queue（キュー）を初期化。
+l.211:出発点(start)をキューに入れる。
+l.213~224:キューが空ではない場合、キューから1つ取り出し(DeQueue)、行ったことがない（visited[index]==UNVISITED)ならば、行ったことにして（visited[index]=VISITED）、その場所から行けるところをキューに入れる。
+l.226~230:すべての駅に到達可能なことをチェックする。
 
 
 
 ## 出力結果
 
 ```
+PS C:\Users\bb35319031\プログラミング\2020psp3\k05> gcc k05.c -o k05.exe
+PS C:\Users\bb35319031\プログラミング\2020psp3\k05> ./k05.exe
+(DepthFirst)赤迫 is visited
+(DepthFirst)長崎大学前 is visited
+(DepthFirst)長崎駅前 is visited
+(DepthFirst)新地中華街 is visited
+(DepthFirst)石橋 is visited
+(DepthFirst)崇福寺 is visited
+(DepthFirst)市民会館 is visited
+(DepthFirst)蛍茶屋 is visited
+(BreadthFirst)赤迫 is visited
+(BreadthFirst)長崎大学前 is visited
+(BreadthFirst)長崎駅前 is visited
+(BreadthFirst)新地中華街 is visited
+(BreadthFirst)石橋 is visited
+(BreadthFirst)崇福寺 is visited
+(BreadthFirst)市民会館 is visited
+(BreadthFirst)蛍茶屋 is visited
+Time Required: 8
 
 ```
 
