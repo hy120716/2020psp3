@@ -120,6 +120,10 @@ void DepthFirstSearch(int size, int matrix[size][size], int start)
         index=StackPop();
         if(visited[index]==UNVISITED){
             visited[index]=VISITED;
+            if(index==start){
+                printf("----DepthFirst route----\n");
+            }
+            printf("%s\n",ArrayStation[index].kanji);
 
             for(i=0;i<MAX_STATIONS;i++){
                 if(matrix[index][i]!=0){
@@ -129,10 +133,14 @@ void DepthFirstSearch(int size, int matrix[size][size], int start)
         }
     }
 
+    int cn=0;
     for(i=0;i<MAX_STATIONS;i++){
         if(visited[i]==VISITED){
-            printf("(DepthFirst)%s is visited\n",ArrayStation[i].kanji);
+            cn++;
         }
+    }
+    if(cn==MAX_STATIONS){
+        printf("(DepthFirst)All station is visited\n");
     }
 
 }
@@ -214,6 +222,10 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
         index=DeQueue();
         if(visited[index]==UNVISITED){
             visited[index]=VISITED;
+            if(index==start){
+                printf("----BreadthFirst route----\n");
+            }
+            printf("%s\n",ArrayStation[index].kanji);
 
             for(i=0;i<MAX_STATIONS;i++){
                 if(matrix[index][i]!=0){
@@ -223,12 +235,15 @@ void BreadthFirstSearch(int size, int matrix[size][size], int start)
         }
     }
 
+    int cn=0;
     for(i=0;i<MAX_STATIONS;i++){
         if(visited[i]==VISITED){
-            printf("(BreadthFirst)%s is visited\n",ArrayStation[i].kanji);
+            cn++;
         }
     }
-
+    if(cn==MAX_STATIONS){
+        printf("(BreadFirst)All station is visited\n");
+    }
 }
 
 
