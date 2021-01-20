@@ -102,14 +102,16 @@ int AdjacencyMatrix[MAX_STATIONS][MAX_STATIONS] = {
 l.113~115:visitedを初期化。
 l.116:Stackを初期化。
 l.117:出発点(start)をPush。
-l.119~130:stackが空ではない場合、stackから1つ取り出し（pop)、行ったことがない（visited[index]==UNVISITED)ならば、行ったことにして（visited[index]=VISITED）、その場所から行けるところをstackに入れる。
-l.132~135:すべての駅に到達可能なことをチェックする。
+l.119~134:stackが空ではない場合、stackから1つ取り出し（pop)、行ったことがない（visited[index]==UNVISITED)ならば、行ったことにして（visited[index]=VISITED）、その場所から行けるところをstackに入れる。
+l.126:UNVISITEDからVISITEDに変更したときは駅名を表示（経路を）表示していく。
+l.136~144:すべての駅に到達可能なことをチェックする。
 
-l.207~209:visitedを初期化。
-l.210:Queue（キュー）を初期化。
-l.211:出発点(start)をキューに入れる。
-l.213~224:キューが空ではない場合、キューから1つ取り出し(DeQueue)、行ったことがない（visited[index]==UNVISITED)ならば、行ったことにして（visited[index]=VISITED）、その場所から行けるところをキューに入れる。
-l.226~230:すべての駅に到達可能なことをチェックする。
+l.215~217:visitedを初期化。
+l.218:Queue（キュー）を初期化。
+l.219:出発点(start)をキューに入れる。
+l.221~236:キューが空ではない場合、キューから1つ取り出し(DeQueue)、行ったことがない（visited[index]==UNVISITED)ならば、行ったことにして（visited[index]=VISITED）、その場所から行けるところをキューに入れる。
+l.228:UNVISITEDからVISITEDに変更したときは駅名を表示（経路を）表示していく。
+l.238~246:すべての駅に到達可能なことをチェックする。
 
 
 
@@ -118,22 +120,26 @@ l.226~230:すべての駅に到達可能なことをチェックする。
 ```
 PS C:\Users\bb35319031\プログラミング\2020psp3\k05> gcc k05.c -o k05.exe
 PS C:\Users\bb35319031\プログラミング\2020psp3\k05> ./k05.exe
-(DepthFirst)赤迫 is visited
-(DepthFirst)長崎大学前 is visited
-(DepthFirst)長崎駅前 is visited
-(DepthFirst)新地中華街 is visited
-(DepthFirst)石橋 is visited
-(DepthFirst)崇福寺 is visited
-(DepthFirst)市民会館 is visited
-(DepthFirst)蛍茶屋 is visited
-(BreadthFirst)赤迫 is visited
-(BreadthFirst)長崎大学前 is visited
-(BreadthFirst)長崎駅前 is visited
-(BreadthFirst)新地中華街 is visited
-(BreadthFirst)石橋 is visited
-(BreadthFirst)崇福寺 is visited
-(BreadthFirst)市民会館 is visited
-(BreadthFirst)蛍茶屋 is visited
+----DepthFirst route----
+赤迫
+長崎大学前
+長崎駅前
+市民会館
+蛍茶屋
+崇福寺
+新地中華街
+石橋
+(DepthFirst)All station is visited
+----BreadthFirst route----
+赤迫
+長崎大学前
+長崎駅前
+新地中華街
+市民会館
+石橋
+崇福寺
+蛍茶屋
+(BreadFirst)All station is visited
 Time Required: 8
 
 ```
